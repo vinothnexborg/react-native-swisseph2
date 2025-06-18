@@ -162,6 +162,19 @@
       ]
     ]
   },
+  "codegenConfig": {
+    "name": "RNSwissephSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.reactnativeswisseph"
+    },
+    "ios": {
+      "modulesClassNames": [
+        "RNSwissephModule"
+      ]
+    }
+  },
   "create-react-native-library": {
     "type": "module-new",
     "languages": "cpp",
