@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <ReactCommon/TurboModule.h>
+#import <jsi/jsi.h>
 #import "RNSwissephObjCSpec.h"
 
 namespace facebook {
