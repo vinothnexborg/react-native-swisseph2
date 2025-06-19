@@ -6,7 +6,7 @@
 #include <iostream>
 #include <exception>
 #include <stdlib.h>
-#include <ReactCommon/TurboModule.h>
+#include <react/renderer/turbomodule/TurboModule.h>
 
 namespace facebook {
 namespace react {
