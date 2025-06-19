@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <ReactCommon/TurboModule.h>
+#import <React/TurboModule.h>
 #import <jsi/jsi.h>
 #import "RNSwissephObjCSpec.h"
 
