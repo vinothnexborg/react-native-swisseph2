@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/linchCN/react-native-swisseph.git", :tag => "#{s.version}" }
   s.resources="assets/**/*"
-  s.source_files = "ios/**/*.{h,m,mm}", "ios/RNSwissephSpec.h", "ios/RNSwissephSpec.cpp", "cpp/**/*.h", "cpp/**/*.hpp", "cpp/**/*.cpp", "swisseph/lib/*.h", "swisseph/lib/*.c"
+  s.source_files = "ios/**/*.{m,mm}", "cpp/**/*.h", "cpp/**/*.hpp", "cpp/**/*.cpp", "swisseph/lib/*.h", "swisseph/lib/*.c"
   s.exclude_files = "swisseph/lib/swetest.c"
 
   s.pod_target_xcconfig = {
