@@ -508,6 +508,10 @@ static char *infoexamp = "\n\
 
 #include "swephexp.h" 	/* this includes  "sweodef.h" */
 #include "SwissEphGlue.h"
+#include <stddef.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 /*
  * programmers warning: It looks much worse than it is!
@@ -2293,7 +2297,7 @@ ERR) {
       sprintf(sout_short, "%s\t%2d.%2d.%4d\t%s\t%.3f\t%s\t%d\t%d\n", sout, jday, jmon, jyear, hms(jut,0), attr[8],s1, (int) attr[9], (int) attr[10]);
       sprintf(sout + strlen(sout), "%2d.%02d.%04d\t%s\t%.4f/%.4f\tsaros %d/%d\t%.6f\n", jday, jmon, jyear, hms(jut,BIT_LZEROES), attr[0],attr[1], (int) attr[9], (int) attr[10], t_ut);
       /* second line:
-       * eclipse times, penumbral, partial, total begin and end */
+       * eclipse times, penumbral, partial, and total begin and end */
       if (eclflag & SE_ECL_PENUMBBEG_VISIBLE)
 	sprintf(sout + strlen(sout), "  %s ", hms_from_tjd(tret[6]));
       else
@@ -2448,7 +2452,7 @@ attr, direction_flag, serr)) == ERR) {
 	  t_ut = tret[0];
 	  swe_revjul(t_ut, gregflag, &jyear, &jmon, &jday, &jut);
 	  dt = (tret[3] - tret[2]) * 24 * 60;
-	  sprintf(sout + strlen(sout), "%2d.%02d.%04d\t%s\t%.4f/%.4f/%.4f\tsaros %d/%d\t%.6f\n", jday, jmon, jyear, hms(jut,BIT_LZEROES), attr[8], attr[0], attr[2], (int) attr[9], (int) attr[10], t_ut);
+	  sprintf(sout + strlen(sout), "%2d.%02d.%04d\t%s\t%.4f/%.4f/%.4f\tsaros %d/%d\t%.6f\n", jday, jmon, jyear, hms(jut,0), attr[8], attr[0], attr[2], (int) attr[9], (int) attr[10], t_ut);
 	  sprintf(sout + strlen(sout), "\t%d min %4.2f sec\t", (int) dt, fmod(dt, 1) * 60);
 	  if (eclflag & SE_ECL_1ST_VISIBLE)
 	    sprintf(sout + strlen(sout), "%s ", hms_from_tjd(tret[1]));

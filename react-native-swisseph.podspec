@@ -14,15 +14,14 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => min_ios_version_supported }
   s.source       = { :git => "https://github.com/linchCN/react-native-swisseph.git", :tag => "#{s.version}" }
   s.resources="assets/**/*"
-  s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}", "swisseph/lib/*.{hpp,cpp,c,h}"
+  s.source_files = "ios/**/*.{h,m,mm}", "ios/RNSwissephSpec.h", "ios/RNSwissephSpec.cpp", "cpp/**/*.h", "cpp/**/*.hpp", "cpp/**/*.cpp", "swisseph/lib/*.h", "swisseph/lib/*.c"
+  s.exclude_files = "swisseph/lib/swetest.c"
+
   s.pod_target_xcconfig = {
-  "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/ReactCommon\""
-  }
-  s.header_search_paths = [
-    '$(PODS_ROOT)/../../node_modules/react-native-swisseph/swisseph/include',
-    '$(PODS_ROOT)/../../node_modules/react-native-swisseph/swisseph/lib'
-  ]
-  s.public_header_files = 'swisseph/include/*.h', 'swisseph/lib/*.h'
+    "HEADER_SEARCH_PATHS" => "$(inherited) $(PODS_ROOT)/../../node_modules/react-native/ReactCommon $(PODS_ROOT)/../../node_modules/react-native/ReactCommon/** $(PODS_ROOT)/../../ios $(PODS_ROOT)/../../cpp",
+    "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
+    "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
+}
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.
@@ -35,7 +34,7 @@ Pod::Spec.new do |s|
     if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
       s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1"
       s.pod_target_xcconfig    = {
-          "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\"",
+          "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" $(PODS_ROOT)/../../node_modules/react-native/ReactCommon $(PODS_ROOT)/../../node_modules/react-native/ReactCommon/** $(PODS_ROOT)/../../ios $(PODS_ROOT)/../../cpp",
           "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
           "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
       }

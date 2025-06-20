@@ -1,17 +1,118 @@
 #import "Swisseph.h"
 #import <Foundation/Foundation.h>
+#include "RNSwissephSpec.h"
 
-@implementation Swisseph
-RCT_EXPORT_MODULE()
+namespace facebook::react {
 
-// Don't compile this code when we build for the old architecture.
-#ifdef RCT_NEW_ARCH_ENABLED
+class SwissephModule : public RNSwissephSpec {
+public:
+  using RNSwissephSpec::RNSwissephSpec;
 
-- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
-    (const facebook::react::ObjCTurboModule::InitParams &)params
-{
-    return std::make_shared<facebook::react::NativeSwissephSpecJSI>(params);
-}
-#endif
+  double sweJulday(double year, double month, double day, double hour, double gregflag) override {
+    // ...actual implementation...
+  }
 
-@end
+  double sweDeltat(double tjd) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweRevjul(jsi::Runtime &rt, double julday, double gregflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweUtcTimeZone(jsi::Runtime &rt, double iyear, double imonth, double iday, double ihour, double imin, double isec, double timezone) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweUtcToJd(jsi::Runtime &rt, double year, double month, double day, double hour, double min, double sec, double gregflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweJdetToUtc(jsi::Runtime &rt, double tjdEt, double gregflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweJdut1ToUtc(jsi::Runtime &rt, double tjdUt, double gregflag) override {
+    // ...actual implementation...
+  }
+
+  void sweSetTopo(double geolon, double geolat, double altitude) override {
+    // ...actual implementation...
+  }
+
+  std::string sweGetPlanetName(double ipl) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweCalcUt(jsi::Runtime &rt, double tjdUt, double ipl, double iflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweCotrans(jsi::Runtime &rt, double longitude, double latitude, double distance, double eps) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweCalc(jsi::Runtime &rt, double tjd, double ipl, double iflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweHouses(jsi::Runtime &rt, double tjdUt, double iflag, double geolat, double geolon, std::string hsys) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweHousesArmc(jsi::Runtime &rt, double armc, double geolat, double eps, std::string hsys) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweHousePos(jsi::Runtime &rt, double armc, double geolat, double eps, std::string hsys) override {
+    // ...actual implementation...
+  }
+
+  void sweSetSidMode(double sidMode, double t0, double ayanT0) override {
+    // ...actual implementation...
+  }
+
+  double sweGetAyanamsaUt(double tjdUt) override {
+    // ...actual implementation...
+  }
+
+  double sweSidtime(double tjdUt) override {
+    // ...actual implementation...
+  }
+
+  double sweGetAyanamsa(double tjdEt) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweFixstar(jsi::Runtime &rt, std::string star, double tjd, double iflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweFixstarUt(jsi::Runtime &rt, std::string star, double tjdUt, double iflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweHeliacalPhenoUt(jsi::Runtime &rt, double tjdUt, std::vector<double> dgeo, std::vector<double> datm, std::vector<double> dobs, std::string objectName, double eventType, double helflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweHeliacalUt(jsi::Runtime &rt, double tjdUt, std::vector<double> dgeo, std::vector<double> datm, std::vector<double> dobs, std::string objectName, double eventType, double helflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweVisLimitMag(jsi::Runtime &rt, double tjdUt, std::vector<double> dgeo, std::vector<double> datm, std::vector<double> dobs, std::string objectName, double helflag) override {
+    // ...actual implementation...
+  }
+
+  jsi::Object sweNodApsUt(jsi::Runtime &rt, double tjdUt, double ipl, double iflag, double method) override {
+    // ...actual implementation...
+  }
+
+  std::string getHarmonyResfilePath() override {
+    // ...actual implementation...
+  }
+};
+
+REGISTER_BRIDGING_TURBOMODULE("Swisseph", SwissephModule);
+
+} // namespace facebook::react
