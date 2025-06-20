@@ -3,6 +3,7 @@
 #import <Foundation/Foundation.h>
 #import "swephexp.h"
 #import "sweph.h"
+#include <float.h> 
 
 static NSBundle *_SWEDataFilesGetBundle() {
     return [NSBundle mainBundle];

@@ -1,4 +1,5 @@
 #include "RNSwissephSpec.h"
+#include <float.h> 
 
 namespace facebook::react {
 

@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "swisseph/lib/swetest.c"
 
   s.pod_target_xcconfig = {
-    "HEADER_SEARCH_PATHS" => "$(inherited) $(PODS_ROOT)/../../node_modules/react-native/ReactCommon $(PODS_ROOT)/../../node_modules/react-native/ReactCommon/** $(PODS_ROOT)/../../ios $(PODS_ROOT)/../../cpp",
+    "HEADER_SEARCH_PATHS" => "$(inherited) $(PODS_ROOT)/../../node_modules/react-native/ReactCommon $(PODS_ROOT)/../../node_modules/react-native/ReactCommon/** $(PODS_ROOT)/../../cpp",
     "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
     "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
 }

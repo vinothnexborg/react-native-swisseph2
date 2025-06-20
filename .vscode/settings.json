@@ -1,5 +1,9 @@
 {
     "search.exclude": {
         "**/node_modules": false
+    },
+    "files.associations": {
+        "swephexp.h": "c",
+        "swephlib.h": "c"
     }
 }

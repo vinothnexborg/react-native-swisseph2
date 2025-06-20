@@ -1,16 +1,15 @@
 #pragma once
 
 #include <jsi/jsi.h>
-#include <react/bridging/Bridging.h>
-#include <react/bridging/BridgingTurboModule.h>
+#include <react/nativemodule/core/ReactCommon/TurboModule.h>
 #include <string>
 #include <vector>
 
 namespace facebook::react {
 
-class JSI_EXPORT RNSwissephSpec : public BridgingTurboModule {
+class JSI_EXPORT RNSwissephSpec : public TurboModule {
 public:
-  using BridgingTurboModule::BridgingTurboModule;
+  using TurboModule::TurboModule;
 
   virtual double sweJulday(double year, double month, double day, double hour, double gregflag) = 0;
   virtual double sweDeltat(double tjd) = 0;

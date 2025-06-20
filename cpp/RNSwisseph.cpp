@@ -1,4 +1,5 @@
 #include "RNSwisseph.h"
+#include <float.h> 
 
 namespace swisseph {
 double swe_julday(int year, int month, int day, double hour, int gregflag) {

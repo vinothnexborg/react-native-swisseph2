@@ -68,7 +68,9 @@
 #include "sweph.h"
 #include "swephlib.h"
 
-#include "SwissEphGlue.h"
+// #include "SwissEphGlue.h"
+// If you need the glue code, update the include as follows:
+// #include "../../ios/swissephglue.h"
 
 #define IS_PLANET 		0
 #define IS_MOON			1

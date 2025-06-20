@@ -1,15 +1,16 @@
-#import "Swisseph.h"
 #import <Foundation/Foundation.h>
-#include "RNSwissephSpec.h"
+#include "../cpp/RNSwissephSpec.h" // or "RNSwissephSpec.h" if HEADER_SEARCH_PATHS is correct
+#include <float.h>
 
-namespace facebook::react {
+namespace facebook {
+namespace react {
 
-class SwissephModule : public RNSwissephSpec {
+class SwissephModule : public facebook::react::RNSwissephSpec {
 public:
-  using RNSwissephSpec::RNSwissephSpec;
+  using facebook::react::RNSwissephSpec::RNSwissephSpec;
 
   double sweJulday(double year, double month, double day, double hour, double gregflag) override {
-    // ...actual implementation...
+    return 0;
   }
 
   double sweDeltat(double tjd) override {
@@ -110,9 +111,9 @@ public:
 
   std::string getHarmonyResfilePath() override {
     // ...actual implementation...
-  }
+};}
 };
+} // namespace react
+} // namespace facebook
+} // namespace facebook
 
-REGISTER_BRIDGING_TURBOMODULE("Swisseph", SwissephModule);
-
-} // namespace facebook::react
