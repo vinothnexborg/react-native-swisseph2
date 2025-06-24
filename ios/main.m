@@ -1,6 +1,7 @@
+#include <float.h>
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #include "../cpp/RNSwissephSpec.h" // or "RNSwissephSpec.h" if HEADER_SEARCH_PATHS is correct
-#include <float.h>
 
 namespace facebook {
 namespace react {
@@ -116,4 +117,3 @@ public:
 
 } // namespace react
 } // namespace facebook
-
