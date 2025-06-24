@@ -1,3 +1,4 @@
+#include "FloatFix.h"
 #include <float.h>
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
