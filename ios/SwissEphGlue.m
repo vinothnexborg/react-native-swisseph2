@@ -84,3 +84,19 @@ void _SEGLibraryInitialize() {
 void _SEGLibraryFinalize() {
     swe_close();
 }
+
+// filepath: ios/SwissEphGlue.m
+#import "SwissEphGlue.h"
+
+@implementation SwissEphGlue
+
+RCT_EXPORT_MODULE(SwissEph)
+
++ (BOOL)requiresMainQueueSetup
+{
+    return NO;
+}
+
+// Your existing methods here...
+
+@end
